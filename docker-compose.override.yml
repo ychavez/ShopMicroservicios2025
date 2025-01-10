@@ -6,10 +6,9 @@ services:
     ports:
       - "8080:8080"
 
-  orderdb:
-   container_name: orderdb
-   environment:
-     SA_PASSWORD: "Passw0rd23"
-     ACCEPT_EULA: "Y"
+  catalogdb:
+   container_name: catalogdb
    ports:
-    - 1433:1433 
+    - "27017:27017"
+   volumes:
+    - "mongo_data:/data/db" 
