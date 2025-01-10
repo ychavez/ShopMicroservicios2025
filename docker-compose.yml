@@ -1,0 +1,9 @@
+services:
+  catalogapi:
+    image: ${DOCKER_REGISTRY-}catalogapi
+    build:
+      context: .
+      dockerfile: CatalogApi/Dockerfile
+  
+  orderdb:
+   image: mcr.microsoft.com/mssql/server:2022-latest
